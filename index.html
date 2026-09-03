@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Twitter Downloader</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="logo">
+            𝕏
+        </div>
+
+        <h1>Twitter Downloader</h1>
+
+        <p class="subtitle">
+            Download videos from Twitter / X quickly and easily.
+        </p>
+
+        <div class="download-card">
+
+            <label for="url">Twitter / X video URL</label>
+
+            <div class="input-wrapper">
+                <input
+                    type="url"
+                    id="url"
+                    placeholder="https://x.com/username/status/..."
+                    autocomplete="off"
+                >
+
+                <button id="clearBtn" class="clear-btn">
+                    ×
+                </button>
+            </div>
+
+            <label for="quality">Quality</label>
+
+            <select id="quality">
+                <option value="best">Best Quality</option>
+                <option value="worst">Lowest Quality</option>
+                <option value="bv[height<=1080]+ba/b">
+                    Up to 1080p
+                </option>
+                <option value="bv[height<=720]+ba/b">
+                    Up to 720p
+                </option>
+                <option value="bv[height<=480]+ba/b">
+                    Up to 480p
+                </option>
+            </select>
+
+            <button id="downloadBtn" class="download-btn">
+                <span id="btnText">Download Video</span>
+                <span id="loader" class="loader"></span>
+            </button>
+
+            <div id="status" class="status"></div>
+
+        </div>
+
+        <div class="saved-location">
+            <span>📁</span>
+            <div>
+                <small>Saved to</small>
+                <p>Downloads / Recently Downloads</p>
+            </div>
+        </div>
+
+        <footer>
+            Simple. Fast. No unnecessary clutter.
+        </footer>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
